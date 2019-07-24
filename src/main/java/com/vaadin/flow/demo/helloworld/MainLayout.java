@@ -30,6 +30,7 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.AfterNavigationObserver;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.router.RouterLink;
 
@@ -76,15 +77,20 @@ public class MainLayout extends Composite<Div>
         RouterLink elements = new RouterLink("Element",
                 HelloWorldElement.class);
         elements.setId("elements-link");
+        
+        RouterLink hello = new RouterLink("Hello",
+                MainPage.class);
+        hello.setId("hello-link");
 
         // Add menu links to a map for selection handling.
         targetPaths.put(template.getHref(), template);
         targetPaths.put(components.getHref(), components);
         targetPaths.put(elements.getHref(), elements);
+        targetPaths.put(hello.getHref(), hello);
 
         HtmlContainer ul = new HtmlContainer("ul");
         ul.setClassName("topnav");
-        ul.add(template, components, elements);
+        ul.add(template, components, elements,hello);
 
         Div menu = new Div();
         menu.setClassName("menu");
