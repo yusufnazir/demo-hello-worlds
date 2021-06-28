@@ -23,7 +23,7 @@
 		<sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
 
 		<!-- Libraries -->
-		<flow.version>2.0.0</flow.version>
+		<flow.version>2.6.2</flow.version>
 		<commons.beanutils.version>1.9.3</commons.beanutils.version>
 
 		<!-- Plugins -->
